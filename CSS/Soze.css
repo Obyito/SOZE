@@ -47,9 +47,8 @@
     position: relative;
     border-radius: 10px;
 }
-.choose-food:hover{
-    box-shadow: #404042 10px 10px 10px;
-}
+
+/* Vegan */
 #vegan{
     margin-top: 100px;
     display: inline-block;
@@ -57,10 +56,64 @@
 #vegan h1{
     color: #54b301;
     text-align: center;
-    margin-top: 30px;
+    padding-top: 27px;
+    padding-bottom: 15px;
     font-weight: 100;
     font-size: 40px;
 }
+/* Hover Vegan */
+.hvr-radial-in1 {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    overflow: hidden;
+    background: #54b301;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    width: 205px;
+    height: 90px;
+    border-radius: 10px;
+}
+.hvr-radial-in1:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e1e1e1;
+    border-radius: 100%;
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-radial-in1:hover, 
+.hvr-radial-in1:focus, 
+.hvr-radial-in1:active {
+  color: white;
+}
+.hvr-radial-in1:hover:before, 
+.hvr-radial-in1:focus:before, 
+.hvr-radial-in1:active:before {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+#vegan h1:hover{
+    color: white;
+}
+
+/* Casher */
 #casher{
     margin-top: 100px;
     float: right;
@@ -69,10 +122,64 @@
 #casher h1{
     color: #0038b8;
     text-align: center;
-    margin-top: 20px;
+    padding-top: 17px;
+    padding-bottom: 17px;
     font-weight: 100;
     font-size: 42px;
 }
+/* Hover Casher */
+.hvr-radial-in2 {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+  background: #0038b8;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+    width: 205px;
+    height: 90px;
+    border-radius: 10px;
+}
+.hvr-radial-in2:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e1e1e1;
+  border-radius: 100%;
+  -webkit-transform: scale(2);
+  transform: scale(2);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-in2:hover, 
+.hvr-radial-in2:focus, 
+.hvr-radial-in2:active {
+  color: white;
+}
+.hvr-radial-in2:hover:before, 
+.hvr-radial-in2:focus:before, 
+.hvr-radial-in2:active:before {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+#casher h1:hover{
+    color: white;
+}
+
+/* Hallal */
 #hallal{
     margin-top: 20px;
     display: inline-block;
@@ -80,11 +187,64 @@
 #hallal h1{
     color: #af0909;
     text-align: center;
-    margin-top: 20px;
+    padding-top: 17px;
     font-weight: 100;
     font-size: 42px;
+    padding-bottom: 15px;
+}
+/* Hover hallal */
+.hvr-radial-in3 {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+  background: #af0909;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+    width: 205px;
+    height: 90px;
+    border-radius: 10px;
+}
+.hvr-radial-in3:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e1e1e1;
+    border-radius: 100%;
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-radial-in3:hover, 
+.hvr-radial-in3:focus, 
+.hvr-radial-in3:active {
+    color: white;
+}
+.hvr-radial-in3:hover:before, 
+.hvr-radial-in3:focus:before, 
+.hvr-radial-in3:active:before {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+#hallal h1:hover{
+    color: white;
 }
 
+/* Bio */
 #bio{
     float: right;
     display: inline-block;
@@ -93,11 +253,64 @@
 #bio h1{
     color: #7d3800;
     text-align: center;
-    margin-top: 30px;
+    padding-top: 27px;
+    padding-bottom: 15px;
     font-weight: 100;
     font-size: 40px;
 }
+/* Hover bio */
+.hvr-radial-in4 {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    overflow: hidden;
+    background: #7d3800;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    width: 205px;
+    height: 90px;
+    border-radius: 10px;
+}
+.hvr-radial-in4:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e1e1e1;
+    border-radius: 100%;
+    -webkit-tran2form: scale(2);
+    transform: scale(2);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-radial-in4:hover, 
+.hvr-radial-in4:focus, 
+.hvr-radial-in4:active {
+    color: white;
+}
+.hvr-radial-in4:hover:before, 
+.hvr-radial-in4:focus:before, 
+.hvr-radial-in4:active:before {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+#bio h1:hover{
+    color: white;
+}
 
+/* Texte Home Page */
 #google{
     float: right;
 }
