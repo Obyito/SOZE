@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Font';
+}
+@font-face {
+    font-family:'Font';
+    src: url(../font/font1.otf);
+}
+#window{
+    background-image: url(../Images/Bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 720px;
+}
+#window ul{
+    display: inline-block;
+    margin-top: 455px;
+    margin-left: 15px;
+    float: left;
+}
+#window ul li{
+    list-style: none;
+    margin-top: 5px;
+}
+#logo{
+    background-color: transparent;
+    width: 430px;
+    height: 290px;
+    display: inline-block;
+    margin-top: 45px;
+    margin-left: 360px;
+}
+#logo img{
+    padding-left: 90px;
+    padding-top: 70px;
+    width: 250px;
+}
+#food a{
+    text-decoration: none;
+}
+.choose-food{
+    background: #ffffff;
+    width: 205px;
+    height: 95px;
+    position: relative;
+    border-radius: 10px;
+}
+.choose-food:hover{
+    box-shadow: #404042 10px 10px 10px;
+}
+#vegan{
+    margin-top: 100px;
+    display: inline-block;
+}
+#vegan h1{
+    color: #54b301;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 100;
+    font-size: 40px;
+}
+#casher{
+    margin-top: 100px;
+    float: right;
+    display: inline-block;
+}
+#casher h1{
+    color: #0038b8;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 100;
+    font-size: 42px;
+}
+#hallal{
+    margin-top: 20px;
+    display: inline-block;
+}
+#hallal h1{
+    color: #af0909;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 100;
+    font-size: 42px;
+}
+
+#bio{
+    float: right;
+    display: inline-block;
+    margin-top: 20px;
+}
+#bio h1{
+    color: #7d3800;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 100;
+    font-size: 40px;
+}
+
+#google{
+    float: right;
+}
+#google h1{
+    color: #ffffff;
+    margin-top: 110px;
+    margin-right: -70px;
+    font-weight: 100;
+    font-size: 60px;
+    display: inline-block;
+    line-height: 65px;
+}
+#google img{
+    float: right;
+    display: inline-block;
+    margin-top: 285px;
+    margin-right: 60px;
+    width: 70px;
+}
