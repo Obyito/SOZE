@@ -3,10 +3,19 @@
     padding: 0;
     font-family: 'Font';
 }
+
 @font-face {
     font-family:'Font';
     src: url(../font/font1.otf);
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
 #window{
     background-image: url(../Images/Bg.png);
     background-size: contain;
@@ -14,16 +23,19 @@
     width: 100%;
     height: 720px;
 }
+
 #window ul{
     display: inline-block;
     margin-top: 455px;
     margin-left: 15px;
     float: left;
 }
+
 #window ul li{
     list-style: none;
     margin-top: 5px;
 }
+
 #logo{
     background-color: transparent;
     width: 430px;
@@ -40,20 +52,14 @@
 #food a{
     text-decoration: none;
 }
-.choose-food{
-    background: #ffffff;
-    width: 205px;
-    height: 95px;
-    position: relative;
-    border-radius: 10px;
-}
+
 
 /* Vegan */
-#vegan{
+#vegan_block{
     margin-top: 100px;
     display: inline-block;
 }
-#vegan h1{
+#vegan_block h1{
     color: #54b301;
     text-align: center;
     padding-top: 27px;
@@ -87,7 +93,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #e1e1e1;
+    background: #ffffff;
     border-radius: 100%;
     -webkit-transform: scale(2);
     transform: scale(2);
@@ -109,17 +115,17 @@
   -webkit-transform: scale(0);
   transform: scale(0);
 }
-#vegan h1:hover{
+#vegan_block h1:hover{
     color: white;
 }
 
 /* Casher */
-#casher{
+#casher_block{
     margin-top: 100px;
     float: right;
     display: inline-block;
 }
-#casher h1{
+#casher_block h1{
     color: #0038b8;
     text-align: center;
     padding-top: 17px;
@@ -153,7 +159,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #e1e1e1;
+  background: #ffffff;
   border-radius: 100%;
   -webkit-transform: scale(2);
   transform: scale(2);
@@ -175,16 +181,16 @@
   -webkit-transform: scale(0);
   transform: scale(0);
 }
-#casher h1:hover{
+#casher_block h1:hover{
     color: white;
 }
 
 /* Hallal */
-#hallal{
+#hallal_block{
     margin-top: 20px;
     display: inline-block;
 }
-#hallal h1{
+#hallal_block h1{
     color: #af0909;
     text-align: center;
     padding-top: 17px;
@@ -218,7 +224,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #e1e1e1;
+    background: #ffffff;
     border-radius: 100%;
     -webkit-transform: scale(2);
     transform: scale(2);
@@ -240,17 +246,17 @@
     -webkit-transform: scale(0);
     transform: scale(0);
 }
-#hallal h1:hover{
+#hallal_block h1:hover{
     color: white;
 }
 
 /* Bio */
-#bio{
+#bio_block{
     float: right;
     display: inline-block;
     margin-top: 20px;
 }
-#bio h1{
+#bio_block h1{
     color: #7d3800;
     text-align: center;
     padding-top: 27px;
@@ -284,9 +290,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #e1e1e1;
+    background: #ffffff;
     border-radius: 100%;
-    -webkit-tran2form: scale(2);
+    -webkit-transform: scale(2);
     transform: scale(2);
     -webkit-transition-property: transform;
     transition-property: transform;
@@ -306,7 +312,7 @@
     -webkit-transform: scale(0);
     transform: scale(0);
 }
-#bio h1:hover{
+#bio_block h1:hover{
     color: white;
 }
 
@@ -329,4 +335,52 @@
     margin-top: 285px;
     margin-right: 60px;
     width: 70px;
+}
+
+/*OPTION API */
+
+
+#map {
+    height: 80%;
+}
+
+
+#vegan_blocks {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 800px;
+    right: 0px;
+    background-color: gray;
+    color: white;
+}
+
+#casher_blocks {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 200px;
+    right: 0px;
+    background-color: gray;
+    color: white;
+}
+
+#hallal_blocks {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 400px;
+    right: 0px;
+    background-color: gray;
+    color: white;
+}
+
+#bio_blocks {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 600px;
+    right: 0px;
+    background-color: gray;
+    color: white;
 }

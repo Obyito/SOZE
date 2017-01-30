@@ -17,16 +17,16 @@
         <div id="logo">
             <img src="Images/logo.png"/>
             <div id="food">
-                <div class="hvr-radial-in1" id="vegan">
+                <div class="hvr-radial-in1" id="vegan_block">
                     <a href="#"><h1> VEGAN </h1></a>
                 </div>
-                <div class="hvr-radial-in2" id="casher">
+                <div class="hvr-radial-in2" id="casher_block">
                     <a href="#"><h1> כשר </h1></a>
                 </div>
-                <div class="hvr-radial-in3" id="hallal">
+                <div class="hvr-radial-in3" id="hallal_block">
                     <a href="#"><h1> حلالا </h1></a>
                 </div>
-                <div class="hvr-radial-in4" id="bio">
+                <div class="hvr-radial-in4" id="bio_block">
                     <a href="#"><h1> BIO </h1></a>
                 </div>
             </div>
@@ -36,7 +36,23 @@
             <img src="Images/googlemap.png"/>
         </div>
     </div>
-    <div id="map"></div>
+    
+    
+    
+      
+   <div id="map" style="width:1000px;height:1000px;"></div>
+    
+    <div id="mapopip"></div>
+    
+    <div id="vegan_blocks">vegan</div>
+    <div id="casher_blocks">casher</div>
+    <div id="hallal_blocks">hallal</div>
+    <div id="bio_blocks">bio</div>
+    
+    <script src="API.js"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDachJ4bZFvCpvXPAc6ygRfJGIcqXfwwoM&signed_in=true&libraries=places&callback=initMap" async defer></script>
+    
     <script src="JS/Soze.js"></script>
 </body>
 </html>
