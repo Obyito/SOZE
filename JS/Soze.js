@@ -128,54 +128,84 @@ function clearMarkers() {
 $(document).ready(function(){
         
         //VEGAN
-		$("#vegan_blocks").click(function(){
+		$("#vegan_block").click(function(){
 			var   vegan = true;
             var casher = false;
             var hallal = false;
             var    bio = false;
-            $("#vegan_blocks").css("background-color", "green");
-            $("#casher_blocks").css("background-color", "red");
-            $("#hallal_blocks").css("background-color", "red");
-            $("#bio_blocks").css("background-color", "red");
+            $("#vegan_block").css("background-color", "green");
+            $("#casher_block").css("background-color", "red");
+            $("#hallal_block").css("background-color", "red");
+            $("#bio_block").css("background-color", "red");
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['vegan', 'veggie', 'vegetarian', 'vegetal']);
 		});
     
         //CASHER
-		$("#casher_blocks").click(function(){
+		$("#casher_block").click(function(){
 			var  vegan = false;
             var  casher = true;
             var hallal = false;
             var    bio = false;
-            $("#casher_blocks").css("background-color", "green");
-            $("#vegan_blocks").css("background-color", "red");
-            $("#hallal_blocks").css("background-color", "red");
-            $("#bio_blocks").css("background-color", "red");
+            $("#casher_block").css("background-color", "green");
+            $("#vegan_block").css("background-color", "red");
+            $("#hallal_block").css("background-color", "red");
+            $("#bio_block").css("background-color", "red");
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['casher','cacher']);
 		});
     
         //HALLAL
-        $("#hallal_blocks").click(function(){
+        $("#hallal_block").click(function(){
 			var  vegan = false;
             var casher = false;
             var  hallal = true;
             var    bio = false;
-            $("#casher_blocks").css("background-color", "red");
-            $("#vegan_blocks").css("background-color", "red");
-            $("#hallal_blocks").css("background-color", "green");
-            $("#bio_blocks").css("background-color", "red");
+            $("#casher_block").css("background-color", "red");
+            $("#vegan_block").css("background-color", "red");
+            $("#hallal_block").css("background-color", "green");
+            $("#bio_block").css("background-color", "red");
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['hallal']);
 		});
         
         //BIO
-        $("#bio_blocks").click(function(){
+        $("#bio_block").click(function(){
 			var  vegan = false;
             var casher = false;
             var hallal = false;
             var    bio =  true;
-            $("#casher_blocks").css("background-color", "red");
-            $("#vegan_blocks").css("background-color", "red");
-            $("#hallal_blocks").css("background-color", "red");
-            $("#bio_blocks").css("background-color", "green");
+            $("#casher_block").css("background-color", "red");
+            $("#vegan_block").css("background-color", "red");
+            $("#hallal_block").css("background-color", "red");
+            $("#bio_block").css("background-color", "green");
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['bio', 'organic']);
 		});
 });
+
+
+/*jQuery(function($) {
+    function fixDiv() {
+        var $cache = $('#button-list');
+            if ($(window).scrollTop() < 720){
+                $cache.fadeOut().css({
+                'position': 'absolute',    
+                });
+
+            }
+    
+            else if ($(window).scrollTop() > 720 && $(window).scrollTop() < 1000){
+                $cache.fadeIn().css({
+                'position': 'fixed',
+                'right': '30px', 
+                });
+
+            }
+            else{
+                $cache.css({
+                'position': 'absolute',
+                'right': '30px',
+                });
+            }         
+    }
+    
+    $(window).scroll(fixDiv);
+    fixDiv();
+});*/
