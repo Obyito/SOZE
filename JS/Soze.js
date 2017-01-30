@@ -56,6 +56,7 @@ function initMap() {
         center: paris,
         zoom: 13
     });
+    infowindow = new google.maps.InfoWindow();
 }
 
 
@@ -71,8 +72,6 @@ function initMap() {
             }
         }
     }
-
-    
     //PREFERENCE MAP
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
@@ -91,26 +90,77 @@ function createMarker(place) {
     console.log(place);
     
     var placeLoc = place.geometry.location;
+    
+       var iconType = {};
+    
+    
+    
+     if (place.types.indexOf('cafe') != -1){
+        iconType = "images/coffe-icon.png";
+         
+        } else if (place.types.indexOf('restaurant') != -1){
+        iconType = "images/resto-icon.png";
+        
+        } else if (place.types.indexOf('grocery_or_supermarket') != -1){
+        iconType = "images/supermarket-icon.png";
+        
+        } else if (place.types.indexOf('food') != -1){
+        iconType = "images/resto-icon.png";
+        }
+    
+    /*
+    
+    if (place.types.indexOf('food') != -1)
+        iconType['store'] = "images/supermarket-icon.png";
+    
+    if (place.types.indexOf('food') != -1)
+        iconType['establishment'] = "images/supermarket-icon.pngsupermarket-icon.png";
+    
+    if (place.types.indexOf('food') != -1)
+        iconType['point_of_interest'] = "images/supermarket-icon.pngsupermarket-icon.pngsupermarket-icon.png";
+    
+    if (place.types.indexOf('food') != -1)
+        iconType['grocery_or_supermarket'] = "images/supermarket-icon.pngsupermarket-icon.pngsupermarket-icon.pngsupermarket-icon.png";
+    */
+    
     var marker = new google.maps.Marker({
         map: map,
-         position: place.geometry.location,
-        icon : 'images/self.png',
-        //title: markers[i][0],
-        
-    });
-
-    markers.push(marker);
+        position: place.geometry.location,
+        icon: iconType
+        //[place.types[0]]
+        });
     
-    google.maps.event.addListener(marker, 'click', function() {
+        markers.push(marker);
+        
+        google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(place.name + '<br/>' + place.vicinity + '<br/>'+ place.types + '">');
+        infowindow.open(map, marker);
+    });
+        //if result type = grocery_or_supermarket {
+       // icon : 'images/self.png',
+        //title: markers[i][0],
+     
+        
+    
+
+    
+ /*   
+google.maps.event.addListener(marker, 'click', function() {
         //var index = markers.indexOf(marker),
           //  data = markers_data[index];
           //$('#mapopup').text(data.name);
        
-        //infoWindow.setContent(marker.info);    
+        //infoWindow.setContent(marker.info); 
+        infowindow.setContent(place.name + '<br/>' + place.vicinity);
+        infowindow.open(map, marker);
        
     });
+*/    
+
 }
 
+                
+   
 
 //CLEAR MARKERS WHEN NEW SEARCH
 function clearMarkers() {
