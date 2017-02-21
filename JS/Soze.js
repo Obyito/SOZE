@@ -1,43 +1,42 @@
+/*--------------*/
+/***** Menu *****/
+/*--------------*/
 
-// tout foutre dans la même fonction plus tard.
-//reseau sociaux  hover.
-
-//SOCIAL MEDIA HOVER
 $(document).ready(function(){
-    $('#instagram').hover(function(){ 
-        $('#instagram').attr('src','Images/Icones/Instagram.png');
-    },
-    function(){ $('#instagram').attr('src','Images/Icones/Instagram42.png')
-    });
+    $('#button').click(function(){
+    $('#menu').css('display','none')
+    $('#list').css('display','inline-block')
+    }) 
 });
-
 $(document).ready(function(){
-    $('#twitter').hover(function(){                       $('#twitter').attr('src','Images/Icones/Twitter.png');
-    },
-    function(){
-    $('#twitter').attr('src','Images/Icones/twitter42.png')
-    });
-});
-
-$(document).ready(function(){
-    $('#facebook').hover(function(){                       $('#facebook').attr('src','Images/Icones/Facebook.png');
-    },
-    function(){
-    $('#facebook').attr('src','Images/Icones/facebook42.png')
-    });
-});
-
-$(document).ready(function(){
-    $('#google_plus').hover(function(){                     $('#google_plus').attr('src','Images/Icones/Google+.png');
-    },
-    function(){
-    $('#google_plus').attr('src','Images/Icones/google-plus42.png')
-    });
+    $('#button-close').click(function(){
+    $('#menu').css('display','inline-block')
+    $('#list').css('display','none')
+    })
 });
 
 
-//GOOGLE MAP API SYSTEM//
-    
+/*-------------------------*/
+/***** Background-Move *****/
+/*-------------------------*/
+
+$(document).ready(function() {
+var movementStrength = 25;
+var height = movementStrength / $(window).height();
+var width = movementStrength / $(window).width();
+$("#home").mousemove(function(e){
+          var pageX = e.pageX - ($(window).width() / 2);
+          var pageY = e.pageY - ($(window).height() / 2);
+          var newvalueX = width * pageX * -1 - 25;
+          var newvalueY = height * pageY * -1 - 50;
+          $('#home').css("background-position", newvalueX+"px     "+newvalueY+"px");
+});
+});
+
+/*-------------*/
+/***** Map *****/
+/*-------------*/
+
 var vegan = false;
 var casher = false;
 var hallal = false;
@@ -49,7 +48,10 @@ var markers = [],
     markers_data;
 
 
-//INIT MAP
+/*------------------*/
+/***** Init-Map *****/
+/*------------------*/
+
 function initMap() {
     // activate the map on the div#map and center id by //default on a static lat/lng
     map = new google.maps.Map(document.getElementById('map'), {
@@ -60,8 +62,7 @@ function initMap() {
 }
 
 
-//LAUNCH THE SEARCH
- var search = function(location, type, keywords) {
+var search = function(location, type, keywords) {
     clearMarkers();
     function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -96,16 +97,16 @@ function createMarker(place) {
     
     
      if (place.types.indexOf('cafe') != -1){
-        iconType = "images/coffe-icon.png";
+        iconType = "IMG/coffe-icon.png";
          
         } else if (place.types.indexOf('restaurant') != -1){
-        iconType = "images/resto-icon.png";
+        iconType = "IMG/resto-icon.png";
         
         } else if (place.types.indexOf('grocery_or_supermarket') != -1){
-        iconType = "images/supermarket-icon.png";
+        iconType = "IMG/supermarket-icon.png";
         
         } else if (place.types.indexOf('food') != -1){
-        iconType = "images/resto-icon.png";
+        iconType = "IMG/resto-icon.png";
         }
     
     /*
@@ -157,11 +158,8 @@ google.maps.event.addListener(marker, 'click', function() {
     });
 */    
 
-}
-
-                
+}               
    
-
 //CLEAR MARKERS WHEN NEW SEARCH
 function clearMarkers() {
     for(var i=0; i<markers.length; i++){
@@ -173,7 +171,6 @@ function clearMarkers() {
 }
 
 
-
 //CHANGE DIET ON CLICK ('Location',[types], [keywords])
 $(document).ready(function(){
         
@@ -183,10 +180,6 @@ $(document).ready(function(){
             var casher = false;
             var hallal = false;
             var    bio = false;
-            $("#vegan_block").css("background-color", "green");
-            $("#casher_block").css("background-color", "red");
-            $("#hallal_block").css("background-color", "red");
-            $("#bio_block").css("background-color", "red");
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['vegan', 'veggie', 'vegetarian', 'vegetal']);
 		});
     
@@ -196,10 +189,6 @@ $(document).ready(function(){
             var  casher = true;
             var hallal = false;
             var    bio = false;
-            $("#casher_block").css("background-color", "green");
-            $("#vegan_block").css("background-color", "red");
-            $("#hallal_block").css("background-color", "red");
-            $("#bio_block").css("background-color", "red");
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['casher','cacher']);
 		});
     
@@ -209,10 +198,6 @@ $(document).ready(function(){
             var casher = false;
             var  hallal = true;
             var    bio = false;
-            $("#casher_block").css("background-color", "red");
-            $("#vegan_block").css("background-color", "red");
-            $("#hallal_block").css("background-color", "green");
-            $("#bio_block").css("background-color", "red");
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['hallal']);
 		});
         
@@ -222,40 +207,6 @@ $(document).ready(function(){
             var casher = false;
             var hallal = false;
             var    bio =  true;
-            $("#casher_block").css("background-color", "red");
-            $("#vegan_block").css("background-color", "red");
-            $("#hallal_block").css("background-color", "red");
-            $("#bio_block").css("background-color", "green");
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['bio', 'organic']);
 		});
 });
-
-
-/*jQuery(function($) {
-    function fixDiv() {
-        var $cache = $('#button-list');
-            if ($(window).scrollTop() < 720){
-                $cache.fadeOut().css({
-                'position': 'absolute',    
-                });
-
-            }
-    
-            else if ($(window).scrollTop() > 720 && $(window).scrollTop() < 1000){
-                $cache.fadeIn().css({
-                'position': 'fixed',
-                'right': '30px', 
-                });
-
-            }
-            else{
-                $cache.css({
-                'position': 'absolute',
-                'right': '30px',
-                });
-            }         
-    }
-    
-    $(window).scroll(fixDiv);
-    fixDiv();
-});*/
