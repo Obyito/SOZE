@@ -61,7 +61,7 @@ function initMap() {
     infowindow = new google.maps.InfoWindow();
 }
 
-
+//LAUNCH THE SEARCH
 var search = function(location, type, keywords) {
     clearMarkers();
     function callback(results, status) {
@@ -94,41 +94,71 @@ function createMarker(place) {
     
        var iconType = {};
     
-    
-    
-     if (place.types.indexOf('cafe') != -1){
-        iconType = "IMG/coffe-icon.png";
+    //SET ICONS TYPE VEGAN 
+
+     if (place.types.indexOf('cafe') != -1 && vegan){
+        iconType = "IMG/map_icon/coffe-icon.png";
          
-        } else if (place.types.indexOf('restaurant') != -1){
-        iconType = "IMG/resto-icon.png";
+        } else if (place.types.indexOf('restaurant') != -1 && vegan){
+        iconType = "IMG/map_icon/resto-icon-vegan.png";
         
-        } else if (place.types.indexOf('grocery_or_supermarket') != -1){
-        iconType = "IMG/supermarket-icon.png";
+        } else if (place.types.indexOf('grocery_or_supermarket')!= -1 && vegan){
+        iconType = "IMG/map_icon/supermarket-icon-vegan.png";
         
-        } else if (place.types.indexOf('food') != -1){
-        iconType = "IMG/resto-icon.png";
+        } else if (place.types.indexOf('food') != -1 && vegan){
+        iconType = "IMG/map_icon/resto-icon-vegan.png";
         }
     
-    /*
+    //SET ICONS TYPE CASHER
     
-    if (place.types.indexOf('food') != -1)
-        iconType['store'] = "images/supermarket-icon.png";
+    if (place.types.indexOf('cafe') != -1 && casher){
+        iconType = "IMG/map_icon/coffe-icon-casher.png";
+         
+        } else if (place.types.indexOf('restaurant') != -1 && casher){
+        iconType = "IMG/map_icon/resto-icon-casher.png";
+        
+        } else if (place.types.indexOf('grocery_or_supermarket')!= -1 && casher){
+        iconType = "IMG/map_icon/supermarket-icon-casher.png";
+        
+        } else if (place.types.indexOf('food') != -1 && casher){
+        iconType = "IMG/map_icon/resto-icon-casher.png";
+        }
     
-    if (place.types.indexOf('food') != -1)
-        iconType['establishment'] = "images/supermarket-icon.pngsupermarket-icon.png";
+    //SET ICONS TYPE HALLAL
     
-    if (place.types.indexOf('food') != -1)
-        iconType['point_of_interest'] = "images/supermarket-icon.pngsupermarket-icon.pngsupermarket-icon.png";
+    if (place.types.indexOf('cafe') != -1 && hallal){
+        iconType = "IMG/map_icon/coffe-icon.png";
+         
+        } else if (place.types.indexOf('restaurant') != -1 && hallal){
+        iconType = "IMG/map_icon/resto-icon-hallal.png";
+        
+        } else if (place.types.indexOf('grocery_or_supermarket')!= -1 && hallal){
+        iconType = "IMG/map_icon/supermarket-icon-hallal.png";
+        
+        } else if (place.types.indexOf('food') != -1 && hallal){
+        iconType = "IMG/map_icon/resto-icon-hallal.png";
+        }
     
-    if (place.types.indexOf('food') != -1)
-        iconType['grocery_or_supermarket'] = "images/supermarket-icon.pngsupermarket-icon.pngsupermarket-icon.pngsupermarket-icon.png";
-    */
+    //SET ICONS TYPE BIO
+    
+    if (place.types.indexOf('cafe') != -1 && bio){
+        iconType = "IMG/map_icon/coffe-icon.png";
+         
+        } else if (place.types.indexOf('restaurant') != -1 && bio){
+        iconType = "IMG/map_icon/resto-icon-bio.png";
+        
+        } else if (place.types.indexOf('grocery_or_supermarket')!= -1 && bio){
+        iconType = "IMG/map_icon/supermarket-icon-bio.png";
+        
+        } else if (place.types.indexOf('food') != -1 && bio){
+        iconType = "IMG/map_icon/resto-icon.png";
+        }
+    
     
     var marker = new google.maps.Marker({
         map: map,
         position: place.geometry.location,
         icon: iconType
-        //[place.types[0]]
         });
     
         markers.push(marker);
@@ -137,27 +167,6 @@ function createMarker(place) {
         infowindow.setContent(place.name + '<br/>' + place.vicinity + '<br/>'+ place.types + '">');
         infowindow.open(map, marker);
     });
-        //if result type = grocery_or_supermarket {
-       // icon : 'images/self.png',
-        //title: markers[i][0],
-     
-        
-    
-
-    
- /*   
-google.maps.event.addListener(marker, 'click', function() {
-        //var index = markers.indexOf(marker),
-          //  data = markers_data[index];
-          //$('#mapopup').text(data.name);
-       
-        //infoWindow.setContent(marker.info); 
-        infowindow.setContent(place.name + '<br/>' + place.vicinity);
-        infowindow.open(map, marker);
-       
-    });
-*/    
-
 }               
    
 //CLEAR MARKERS WHEN NEW SEARCH
@@ -171,42 +180,43 @@ function clearMarkers() {
 }
 
 
+
 //CHANGE DIET ON CLICK ('Location',[types], [keywords])
 $(document).ready(function(){
         
         //VEGAN
 		$("#vegan_block").click(function(){
-			var   vegan = true;
-            var casher = false;
-            var hallal = false;
-            var    bio = false;
+            vegan = true;
+            casher = false;
+            hallal = false;
+            bio = false;
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['vegan', 'veggie', 'vegetarian', 'vegetal']);
 		});
     
         //CASHER
 		$("#casher_block").click(function(){
-			var  vegan = false;
-            var  casher = true;
-            var hallal = false;
-            var    bio = false;
+			vegan = false;
+            casher = true;
+            hallal = false;
+            bio = false;
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['casher','cacher']);
 		});
     
         //HALLAL
         $("#hallal_block").click(function(){
-			var  vegan = false;
-            var casher = false;
-            var  hallal = true;
-            var    bio = false;
+			vegan = false;
+            casher = false;
+            hallal = true;
+            bio = false;
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['hallal']);
 		});
         
         //BIO
         $("#bio_block").click(function(){
-			var  vegan = false;
-            var casher = false;
-            var hallal = false;
-            var    bio =  true;
+			vegan = false;
+            casher = false;
+            hallal = false;
+            bio =  true;
             search(paris, ['restaurant', 'store', 'grocery_or_supermarket', 'food'], ['bio', 'organic']);
 		});
 });
