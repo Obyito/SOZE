@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+/*------------*/
+/***** Map ****/
+/*------------*/
+
+#map-window{
+    width: 100%;
+    height: 660px;
+    background-image: url(../IMG/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#map {
+    width: 70%;
+    height: 80%;
+    border-radius: 3px;
+    display: inline-block;
+    margin-left: 190px;
+    margin-top: 20px;
+}
+#first-choice{
+    display: inline-block;
+    position: absolute;
+}
+
+#second-choice{
+    display: inline-block;
+    position: absolute;
+}
+.list-choice{
+    margin-top: 175px;
+}
+.list-choice li{
+    background: white;
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 50px;
+    list-style: none;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.list-choice a{
+    text-decoration: none;
+    color: black;
+}
+
+/*------------------*/
+/***** Animation ****/
+/*------------------*/
+
+
