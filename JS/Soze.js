@@ -108,7 +108,7 @@ var search = function(location, type, keywords) {
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: pos,
-        radius: 500,
+        radius: 1000,
         types: type,
         keyword: keywords
     }, callback);
