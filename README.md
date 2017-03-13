@@ -8,3 +8,7 @@ Have a great time with SOZE
 presentation file : 
 
 https://drive.google.com/file/d/0B04XiD14fhRnRU5tcmJHa3dBdDQ/view?usp=sharing
+
+Trello :
+
+https://trello.com/b/LCpKwgrS/soze
